@@ -8,6 +8,6 @@ public class CryptoController {
 
     @GetMapping("/ping")
     public String ping() {
-        return "Hermes service is running ✅";
+        return "Hermes service is running new deployment";
     }
 }
