@@ -1,0 +1,12 @@
+services:
+  hermes:
+    image: hermes:latest
+    container_name: hermes
+    restart: always
+    ports:
+      - "8090:8090"
+    environment:
+      APP_KEY_PATH: /data/secret.key
+    volumes:
+      - ./data:/data
+
