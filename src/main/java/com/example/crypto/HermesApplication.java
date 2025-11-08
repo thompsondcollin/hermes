@@ -1,4 +1,4 @@
-package com.hermes;
+package com.example.crypto;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -9,4 +9,3 @@ public class HermesApplication {
         SpringApplication.run(HermesApplication.class, args);
     }
 }
-

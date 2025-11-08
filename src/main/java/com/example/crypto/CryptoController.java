@@ -1,4 +1,4 @@
-package com.hermes;
+package com.example.crypto;
 
 import org.springframework.web.bind.annotation.*;
 
@@ -11,4 +11,3 @@ public class CryptoController {
         return "Hermes service is running ✅";
     }
 }
-

@@ -12,6 +12,7 @@
     <properties>
         <java.version>21</java.version>
         <spring.boot.version>3.3.2</spring.boot.version>
+        <apache.maven.version>3.11.0</apache.maven.version>
     </properties>
 
     <dependencies>
@@ -33,12 +34,11 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.11.0</version>
+                <version>${apache.maven.version}</version>
                 <configuration>
-                    <release>21</release>
+                    <release>${java.version}</release>
                 </configuration>
             </plugin>
         </plugins>
     </build>
 </project>
-
