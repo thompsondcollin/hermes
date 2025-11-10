@@ -29,9 +29,9 @@ jobs:
           SSH_USER: ${{ secrets.SSH_USER }}
           SSH_HOST: ${{ secrets.SSH_HOST }}
         run: |
-          ssh -o StrictHostKeyChecking=no -i hermes_key $SSH_USER@$SSH_HOST "
+          ssh -o StrictHostKeyChecking=no -i hermes_key $SSH_USER@$SSH_HOST '
             cd ~/Documents/GitHub/hermes &&
             git pull &&
             docker compose down &&
             docker compose up -d --build
-          "
+          '
