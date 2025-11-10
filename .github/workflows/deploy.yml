@@ -24,6 +24,10 @@ jobs:
           chmod 600 hermes_key
 
       - name: Deploy to Raspberry Pi over Tailscale
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          SSH_USER: ${{ secrets.SSH_USER }}
+          SSH_HOST: ${{ secrets.SSH_HOST }}
         run: |
           ssh -o StrictHostKeyChecking=no -i hermes_key $SSH_USER@$SSH_HOST "
             cd ~/Documents/GitHub/hermes &&
@@ -31,7 +35,3 @@ jobs:
             docker compose down &&
             docker compose up -d --build
           "
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-          SSH_USER: ${{ secrets.SSH_USER }}
-          SSH_HOST: ${{ secrets.SSH_HOST }}
