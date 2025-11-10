@@ -12,6 +12,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
+      - name: Set up Tailscale VPN
+        uses: tailscale/github-action@v2
+        with:
+          oauth-client-id: ${{ secrets.TS_OAUTH_CLIENT_ID }}
+          oauth-client-secret: ${{ secrets.TS_OAUTH_CLIENT_SECRET }}
+
       - name: Setup SSH Key
         env:
           PI_SSH_KEY: ${{ secrets.PI_SSH_KEY }}
@@ -19,7 +25,7 @@ jobs:
           echo "$PI_SSH_KEY" > hermes_key
           chmod 600 hermes_key
 
-      - name: Deploy to Pi
+      - name: Deploy to Pi over Tailscale
         env:
           PI_USER: ${{ secrets.PI_USER }}
           PI_HOST: ${{ secrets.PI_HOST }}
